@@ -1,0 +1,19 @@
+{
+  "name": "phaser-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joe-noh/phaser-tutorial.git"
+  },
+  "author": "Joe-noh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joe-noh/phaser-tutorial/issues"
+  },
+  "homepage": "https://github.com/Joe-noh/phaser-tutorial#readme"
+}
