@@ -16,6 +16,9 @@ let mainState = {
 
     this.pipes = game.add.group();
 
+    this.score = 0;
+    this.labelScore = game.add.text(20, 20, "0", {font: "30px Arial", fill: "#ffffff"});
+
     let spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     spaceKey.onDown.add(this.jump, this);
 
@@ -26,6 +29,8 @@ let mainState = {
     if (this.bird.y < 0 || this.bird.y > 490) {
       this.restartGame();
     }
+
+    game.physics.arcade.overlap(this.bird, this.pipes, this.restartGame, null, this);
   },
 
   jump() {
@@ -56,6 +61,9 @@ let mainState = {
         this.addOnePipe(400, i * 60 + 10);
       }
     }
+
+    this.score += 1;
+    this.labelScore.text = this.score;
   }
 };
 
