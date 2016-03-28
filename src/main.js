@@ -35,7 +35,7 @@ let mainState = {
       this.bird.angle += 1;
     }
 
-    game.physics.arcade.overlap(this.bird, this.pipes, this.restartGame, null, this);
+    game.physics.arcade.overlap(this.bird, this.pipes, this.hitPipe, null, this);
   },
 
   jump() {
@@ -70,6 +70,18 @@ let mainState = {
 
     this.score += 1;
     this.labelScore.text = this.score;
+  },
+
+  hitPipe() {
+    if (this.bird.alive == false) { return; }
+
+    this.bird.alive = false;
+
+    game.time.events.remove(this.timer);
+
+    this.pipes.forEach((p) => {
+      p.body.velocity.x = 0;
+    });
   }
 };
 
