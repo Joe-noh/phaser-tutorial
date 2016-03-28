@@ -4,6 +4,7 @@ let mainState = {
   preload() {
     game.load.image('bird', 'assets/images/bird.png');
     game.load.image('pipe', 'assets/images/pipe.png');
+    game.load.audio('jump', 'assets/sounds/jump.wav');
   },
 
   create() {
@@ -19,6 +20,8 @@ let mainState = {
 
     this.score = 0;
     this.labelScore = game.add.text(20, 20, "0", {font: "30px Arial", fill: "#ffffff"});
+
+    this.jumpSound = game.add.audio('jump');
 
     let spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     spaceKey.onDown.add(this.jump, this);
@@ -41,6 +44,7 @@ let mainState = {
   jump() {
     this.bird.body.velocity.y = -350;
     game.add.tween(this.bird).to({angle: -20}, 100).start();
+    this.jumpSound.play();
   },
 
   restartGame() {
