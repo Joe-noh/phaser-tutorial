@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Joe-noh/phaser-tutorial/issues"
   },
-  "homepage": "https://github.com/Joe-noh/phaser-tutorial#readme"
+  "homepage": "https://github.com/Joe-noh/phaser-tutorial#readme",
+  "dependencies": {
+    "phaser": "^2.4.6"
+  }
 }
